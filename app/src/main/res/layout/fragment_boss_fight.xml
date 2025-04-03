@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/BossImage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BossFightFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_vertical|center"
+        android:layout_marginBottom="120dp"
+        android:src="@drawable/finalboss" />
+
+    <TextView
+        android:id="@+id/BossText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center"
+        android:text="Päävihollisen tiedot"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/AttackBossButton"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_vertical|center"
+        android:layout_marginTop="100dp"
+        android:text="Hyökkää!" />
+
+</FrameLayout>
