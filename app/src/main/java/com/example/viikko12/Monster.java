@@ -8,6 +8,7 @@ public abstract class Monster {
 
     public Monster(int maxLife, String name) {
         this.name = name;
+        this.life = maxLife;
         this.maxLife = maxLife;
     }
 

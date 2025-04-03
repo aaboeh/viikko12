@@ -1,6 +1,5 @@
 package com.example.viikko12.fragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -28,27 +27,33 @@ public class BossFightFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        boss = new Monster(200, "Pääjehu") {
+            private boolean healed = false;
+            @Override
+            public void takeDamage(int damage) {
+                if (this.getLife() - damage <= 0) {
+                    super.takeDamage(this.getLife());
+                } else {
+                    super.takeDamage(damage);
+                    if (!healed && this.getLife() < this.getMaxLife()/2) {
+                        healed = true;
+                        super.takeDamage(-(this.getMaxLife()-this.getLife()));
+                    }
+
+                }
+            }
+        };
     }
 
-    @SuppressLint("WrongViewCast")
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_boss_fight, container, false);
 
-        bossImage = view.findViewById(R.id.BossImage);
         bossText = view.findViewById(R.id.BossText);
         attackBossButton = view.findViewById(R.id.AttackBossButton);
-
-        boss = new Monster(200, "Pääjehu") {
-            @Override
-            public void takeDamage(int damage) {
-                super.takeDamage(damage);
-                if (boss.getLife() < boss.getMaxLife()/2) {
-                    super.takeDamage(-getMaxLife());
-                }
-            }
-        };
 
         updateBossUI();
 

@@ -48,8 +48,8 @@ public class ShowMonsterFragment extends Fragment {
                 updateMonster();
             }
 
-            if (getActivity() instanceof MainActivity) {
-                ((MainActivity) getActivity()).updateScoreUI();
+            if (getActivity() instanceof FightMonstersActivity) {
+                ((FightMonstersActivity) getActivity()).updateBossButtonState();
             }
         });
 
