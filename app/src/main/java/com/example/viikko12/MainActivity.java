@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView playerScoreText;
-    private Button fightMonsterActivityButton;
+    private Button fightMonstersActivityButton;
     private GameManager gameManager;
 
     @Override
@@ -19,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
         gameManager = GameManager.getInstance();
         playerScoreText = findViewById(R.id.PlayerScoreText);
-        fightMonsterActivityButton = findViewById(R.id.FightMonsterActivityButton);
+        fightMonstersActivityButton = findViewById(R.id.FightMonstersActivityButton);
 
         updateScoreUI();
 
-        fightMonsterActivityButton.setOnClickListener(view -> {
+        fightMonstersActivityButton.setOnClickListener(view -> {
             Intent intent = new Intent(this, FightMonstersActivity.class);
             startActivity(intent);
         });
