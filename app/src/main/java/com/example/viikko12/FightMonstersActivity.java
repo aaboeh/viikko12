@@ -54,7 +54,7 @@ public class FightMonstersActivity extends AppCompatActivity {
             }
 
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.FightMonsterFrame, fragment)
+                    .replace(R.id.FightMonstersFrame, fragment)
                     .commit();
         }
     };
